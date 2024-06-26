@@ -1,3 +1,20 @@
+env:
+  supressTls: false
+  kubernetesClusterDomain: cluster.local
+
+externalSecrets:
+  refreshInterval: 2m0s
+  secretName: dev-tesla-fleet-telemetry-dev-customer
+
+command: []
+
+serviceAccount:
+  create: true
+  automount: true
+  annotations:
+    eks.amazonaws.com/role-arn: "arn:aws:iam::000000000000:role/aws-timestream-tenant1"
+  name: ""
+
 tlsSecret:
   name: ""
   create: false
@@ -38,4 +55,3 @@ config:
     port: 9273
   profile:
     port: 4269
-kubernetesClusterDomain: cluster.local
