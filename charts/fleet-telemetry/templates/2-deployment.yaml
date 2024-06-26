@@ -35,14 +35,6 @@ spec:
           - /fleet-telemetry
           - -config=/etc/fleet-telemetry/config.json
         {{- end }}
-        livenessProbe:
-          failureThreshold: 5
-          httpGet:
-            path: /metrics
-            port: {{ .Values.config.metrics.port }}
-            scheme: HTTP
-          initialDelaySeconds: 5
-          timeoutSeconds: 10
         readinessProbe:
           failureThreshold: 5
           httpGet:
