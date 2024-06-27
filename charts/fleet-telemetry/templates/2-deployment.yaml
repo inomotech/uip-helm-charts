@@ -72,4 +72,4 @@ spec:
         projected:
           sources:
           - secret:
-              name: {{ .Values.tlsSecret.name | default (printf "%s" (include "fleet-telemetry.fullname" .)) }}
+              name: {{ .Values.tlsSecret.name }}
